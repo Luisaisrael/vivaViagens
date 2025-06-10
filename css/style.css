@@ -1,0 +1,971 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*A largura e altura definidas para um elemento incluem também a borda e o padding. */
+}
+
+body {
+    font-family: "Centra No2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8; /* controla o espaçamento entre linhas de texto. */
+    background-color: #f8f9fa;
+    color: #343a40;
+    display: flex; /* Melhorar a resposividade dos comandos dentro do layout */
+    flex-direction: column; /* Organizar os itens verticalmente */
+    min-height: 100vh; /* Define a altura mínima de um elemento. */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container genérico para centralizar conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header e Navegação --- */
+header {
+    background: #007bff;
+    color: #ffffff;
+    padding: 1px 0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Faz o header fixar no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* usado para controlar a ordem em que elementos sobrepõem uns aos outros */
+}
+
+.header-container-wrapper {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between; /* Logo à esquerda, nav à direita */
+    align-items: center;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    padding: 5px 0; /* Espaçamento vertical se o header quebrar */
+}
+
+#company-logo {
+    height: 50px; /* Ajuste a altura do seu logo conforme necessário */
+    margin-right: 15px;
+}
+
+.company-title {
+    font-size: 1.4em; /* Tamanho destacado para o nome da empresa */
+    font-weight: 700; /* Negrito */
+    color: #ffffff; /* Cor branca para contraste com o fundo azul */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar */
+    letter-spacing: 1px; /* Pequeno espaçamento entre letras */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem linha em telas menores */
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 5px 10px; /* Ajuste na margem para acomodar quebra de linha */
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Adicione class="active" ao link da página atual no HTML */
+    background-color: #0056b3; /* Azul mais escuro para hover/ativo */
+    color: #fff;
+}
+
+/* --- Conteúdo Principal (Main) --- */
+main {
+    flex-grow: 1; /* Faz o main ocupar o espaço restante até o footer */
+    padding: 30px 15px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    width: 95%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+main h1 {
+    color: #0056b3; /* Azul escuro para títulos principais */
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+main h2 {
+    color: #007bff; /* Azul vibrante para subtítulos */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.9em;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+main p {
+    margin-bottom: 1.2em;
+    font-size: 1.05em;
+    color: #495057; /* Cinza um pouco mais claro para parágrafos */
+}
+
+main a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #343a40; /* Cinza escuro para o rodapé */
+    color: #f8f9fa; /* Texto claro no rodapé */
+    margin-top: auto; /* Empurra o rodapé para baixo */
+}
+
+#topo-link {
+    color: #fff;
+}
+
+/* --- Estilos para o formulário e inputs (reutilizados em outras páginas) --- */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="number"],
+form textarea,
+form select { /* Estilo para o select da pagina06 */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #495057;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* --- Botão genérico para formulários e calculadora --- */
+form button[type="submit"],
+.btn-calcular {
+    background-color: #28a745; /* Verde para ações positivas */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para não ocupar largura total por padrão */
+}
+
+form button[type="submit"]:hover,
+.btn-calcular:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* --- Estilos Específicos para a Página de Simulação de Viagem (pagina06) --- */
+#calculadora-viagem {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-top: 25px; /* Adiciona um pouco de espaço do parágrafo acima */
+}
+
+#calculadora-viagem div {
+    margin-bottom: 18px; /* Espaçamento entre os grupos de label/input */
+}
+
+#calculadora-viagem label {
+    display: block; /* Garante que o label ocupe sua própria linha */
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Centraliza o botão dentro da calculadora */
+#calculadora-viagem #calcularCustoBtn {
+    display: block; /* Ocupa a largura total */
+    width: fit-content; /* Se você quiser que o botão se ajuste ao conteúdo */
+    margin: 20px auto 0 auto; /* Centraliza e adiciona margem superior */
+}
+
+#resultado-simulacao {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e6f7ff; /* Fundo azul claro para o resultado */
+    border: 1px solid #007bff; /* Borda azul */
+    border-radius: 5px;
+    text-align: center;
+}
+
+#resultado-simulacao h2 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.5em;
+    border-bottom: none; /* Remove a borda herdada do h2 geral */
+}
+
+#resultado-simulacao #custo_total {
+    font-size: 2em;
+    font-weight: bold;
+    color: #28a745; /* Verde para o custo total */
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* --- Media Queries para Responsividade (gerais e adaptadas) --- */
+@media (max-width: 992px) {
+    main h1 {
+        font-size: 2.4em;
+    }
+    main h2 {
+        font-size: 1.7em;
+    }
+    /* Outras regras para outras páginas podem vir aqui */
+}
+
+@media (max-width: 880px) { /* Ponto de quebra onde o nome da empresa e nav podem precisar de mais espaço */
+    .header-container-wrapper {
+        justify-content: center; /* Centraliza quando há pouco espaço */
+        flex-direction: column;
+    }
+    .logo-area {
+        margin-bottom: 10px; /* Espaço entre logo/nome e a navegação */
+    }
+    header nav ul {
+        justify-content: center; /* Centraliza os itens da navegação */
+        width: 100%;
+    }
+    header nav ul li {
+        margin: 5px; /* Reduz a margem lateral para caber mais itens */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column; /* Menu empilha em telas menores */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 8px 0;
+    }
+    main {
+        width: 98%;
+        padding: 20px 10px;
+    }
+    main h1 {
+        font-size: 2em;
+    }
+    main h2 {
+        font-size: 1.5em;
+    }
+    form fieldset { /* Se você tiver fieldsets na calculadora, ajuste */
+        padding: 15px;
+    }
+    form legend { /* Se você tiver legends na calculadora, ajuste */
+        font-size: 1.2em;
+    }
+}
+
+/* @media screen and (max-width: 600px) {
+  #topnav a:not(:first-child) {display: none;}
+  #topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #topnav.responsive {position: relative;}
+  #topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+} */
+
+@media (max-width: 576px) {
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="date"],
+    form input[type="number"],
+    form textarea,
+    form select {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    form button[type="submit"],
+    .btn-calcular {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%; /* Botões com largura total em telas muito pequenas */
+    }
+    #resultado-simulacao #custo_total {
+        font-size: 1.6em;
+    }
+}
+
+/* pagina Index */
+
+.minha-imagem {
+    display: block; /* Transforma a imagem em um elemento de bloco */
+    margin-left: auto;
+    margin-right: auto;    
+    max-width: 200px;
+}
+
+.login-button {
+            background-color: #ffffff; 
+            border: none;
+            color: rgb(0, 47, 255); 
+            padding: 15px 32px; 
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto;
+            cursor: pointer; 
+            border-radius: 8px; 
+            transition-duration: 0.4s; 
+            display: flex;
+            gap: 5px;
+      
+          
+        }
+        #login {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;   
+    gap: 30px;            
+}
+
+.title-index {
+    font-size: 5rem;
+    font-weight: 700; /* Negrito */
+    text-align: center;
+    margin: 20px 0;
+    color: #061fff; /* Cor branca para contraste com o fundo azul */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar */
+    letter-spacing: 1px; /* Pequeno espaçamento entre letras */
+    align-items: center;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+.subtitulo {
+    font-size: 2em;
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #e9ecef;
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Pagina02: Nossos Destinos */
+#destinos-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+#destinos-galeria article {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#destinos-galeria article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#destinos-galeria h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #0056b3;
+    border-bottom: none;
+}
+
+#destinos-galeria img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Pagina03: Formulário de Orçamento */
+form {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+form fieldset {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+form legend {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #0056b3;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #495057;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Pagina04: Onde Estamos */
+#localizacao {
+    text-align: center;
+}
+
+#mapa-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-top: 56.25%;
+    border: 3px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#mapa-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* Pagina 05 - Promoções */
+.promocao {
+    text-align: justify;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Essencial para que os itens da promoção se ajustem em telas pequenas */
+    gap: 20px; /* Espaço entre os itens da promoção */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #d2e2ea;
+
+
+}
+
+.lista { /* Item individual da promoção */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.05);
+    min-width: 280px; /* Largura mínima para o item */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    list-style-type: none;/*remove as bolinhas de lista*/
+    background-color: beige;
+
+}
+
+.lista:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.info-promocao{
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+.info-baixo {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  width: 100%; /* Garante que ocupe todo o espaço do .info-promocao */
+}
+
+.preco {
+    text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: green;
+  margin-top: 75px;
+  margin-left: 100px;
+}
+.titulo-promocao{
+    color: #000;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 170px;
+    font-size: 1.4em;
+}
+.imagenspromocao {
+    flex: 1;
+    max-width: 300px;
+    height: 240px; /* Altura fixa para as imagens da promoção */
+    width: 450px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 4px;
+    margin: 15px;
+    margin-top: 50px;
+}
+
+
+#listapromocao p { /* Descrição da promoção */
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    flex-grow: 1;
+    font-size: 0.95em;
+    color: #495057;
+    margin-bottom: 15px;
+}
+.frase-promocao{
+    margin: 10px;
+    text-align: center;
+}
+
+/* Responsividade para Promoções */
+@media (max-width: 1024px) {
+    .promocao {
+        justify-content: center; 
+    }
+    .lista {
+        flex-basis: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .promocao {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .lista {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        max-width: 400px;
+        margin: 10px 0;
+    }
+
+    .imagenspromocao {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .info-promocao {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .titulo-promocao {
+        margin: 0 0 10px 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    #listapromocao p {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .info-baixo {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .preco {
+        margin: 0;
+        font-size: 36px;
+    }
+}
+ /* pagina 06 sobre nos*/
+.time {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1000px;
+    flex-wrap: wrap; /* Adicionado para garantir que os membros quebrem linha */
+    margin: auto;
+    
+}
+.membro {
+    background-color:#007bff;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    width: 150px; /* Largura fixa */
+    color: #fff; /* Texto branco para contraste */
+    margin: 10px;   
+}
+.membro img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 120px;
+    height: 120px; /* Garante altura fixa para imagens de perfil */
+    object-fit: cover; /* Recorta a imagem para caber no círculo */
+    margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+    border: 3px solid #fff; /* Borda branca na imagem */
+}
+.membro h3 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #fff; /* Garante que o título seja branco */
+}
+.membro p {
+    font-size: 0.9em;
+    color: #f8f9fa; /* Texto um pouco mais claro */
+}
+.paragrafo-nos{
+    text-align: center;
+}
+
+/* Pagina07: Sobre a Agência */
+#pagina-sobre main ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+#pagina-sobre main ul li {
+    background: #e9ecef;
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+    font-size: 1.05em;
+}
+
+
+
+/* Estilos para o Slideshow (Página de Promoções, provavelmente) */
+.slideshow-container {
+    min-height: auto;
+    box-sizing: border-box;
+    height: auto; /* Ajuste para não fixar a altura, permitindo responsividade */
+    position: relative;
+    margin: 20px auto; /* Centraliza e adiciona margem */
+    width: 80%;
+    max-width: 800px;
+    padding: 0; /* Removido padding extra que conflita com margem auto */
+}
+
+.mySlides {
+    display: none;
+    border-radius: 8px; /* Aplique borda nas imagens, não no container do slide */
+    overflow: hidden; /* Garante que a imagem siga o border-radius */
+}
+
+.mySlides img {
+    width: 100%; /* Imagem preenche o slide */
+    height: 600px; /* Altura automática para manter proporção */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    border-radius: 8px; /* Borda da imagem do slide */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Fundo para os botões */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+ position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  padding:10px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    border-radius: 8px; /* Mantenha o border-radius aqui também se a animação for aplicada ao .mySlides */
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media (max-width: 400px) {
+    .slideshow-container {
+        width: 100%; /* Permite que o slideshow ocupe toda a largura disponível */
+        max-width: 380px; /* Se houver um limite, mantenha */
+        height: auto; /* Garante que a altura se ajuste */
+    }
+    .text {
+        font-size: 12px; /* Reduz o tamanho da fonte da legenda em telas pequenas */
+    }
+}
+
+
+/* --- Estilos Específicos para o Background da Página 06 (Simule Sua Viagem) --- */
+
+.imagemFundo {
+    background-image: linear-gradient(rgbargba(248, 249, 250, 0.5), rrgba(248, 249, 250, 0.5)), url(../images/imagem\ avião.jpg);
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body.imagemFundo main {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+}
+
+body.imagemFundo {
+    background-color: #0056b3;
+}
+.depoimentos {
+  float: right;
+  width: 35%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.depoimentos h3 {
+    color: #0066cc;
+    margin-top: 0;
+}
+
+.depoimentos p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.depoimentos hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.depoimentos strong {
+    font-style: normal;
+    color: #333;
+}
+.destinos {
+    text-align: center;
+}
+.localizacao {
+    text-align: center;
+}
+.calcule {
+    text-align: center;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+  text-align: center;
+  color: #333;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.chat-balao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3a28e0;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    z-index: 1000;  
+}
+#linkbalao{
+    color: white;
+}
+
+@keyframes subirEntrando {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

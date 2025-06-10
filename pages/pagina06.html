@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule a Viagem dos Seus Sonhos!</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="imagemFundo">
+    <a name="topo"></a>
+    <header>
+        <div class="header-container-wrapper">
+            <div class="logo-area">
+                <a href="../index.html"><img src="../images/Logo_Viva_Viagens.png" alt="Logo VIVA VIAGENS"
+                    id="company-logo"></a>
+                       <!-- <a href="index.html"><span class="company-title">VIVA VIAGENS</span></a> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="pagina01.html">Pacotes</a></li>
+                    <li><a href="pagina02.html">Destinos</a></li>
+                    <li><a href="pagina03.html">Orçamento</a></li>
+                    <li><a href="pagina04.html">Onde Estamos</a></li>
+                    <li><a href="pagina05.html">Promoções</a></li>
+                    <li><a href="pagina06.html" class="active">Simule Sua Viagem</a></li>
+                    <li><a href="pagina07.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Calcule a viagem dos seus sonhos!</h1>
+        <p class="calcule">Curioso para saber quanto custa a viagem perfeita para você e sua família? </p>
+            <p class="calcule">Com o nosso simulador, você tem total controle e clareza sobre o seu investimento.
+            <p class="calcule"> 
+            Escolha um de nossos destinos de exemplo, informe o
+            número de viajantes e obtenha uma estimativa rápida e transparente do seu pacote.
+             <p class="calcule">Assim, você planeja com
+            segurança e viaja sem preocupações!</p>
+
+            <div class="depoimentos">
+  <h3>💬 Depoimentos</h3>
+  <p>“Viagem incrível! Tudo perfeito e organizado.”<br><strong>- Ana C.</strong></p>
+  <hr>
+  <p>“Fui para Paris e foi maravilhoso, agência excelente!”<br><strong>- João M.</strong></p>
+</div>
+
+        <section id="calculadora-viagem">
+            <div>
+                <label for="destino-simulacao">Selecione seu destino:</label>
+                <select id="destino-simulacao" name="destino-simulacao">
+                    <option value="1200">Praia Tropical (R$ 1.200 por pessoa)</option>
+                    <option value="950">Cidade Histórica (R$ 950 por pessoa)</option>
+                    <option value="1500">Aventura na Montanha (R$ 1.500 por pessoa)</option>
+                </select>
+            </div>
+            <div>
+                <label for="num_viajantes">Quantos viajantes?</label>
+                <input type="number" id="num_viajantes" name="num_viajantes" min="1" value="1">
+            </div>
+            <button onclick="calcularCusto()">Calcular Agora</button>
+
+            <div id="resultado-simulacao">
+                <h2>Custo Estimado:</h2>
+                <p id="custo_total">R$ 0,00</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Viagens Online. Todos os direitos reservados.</p>
+        <div class="voltar">
+          <a href="#topo" id="topo-link">
+            <img src="../images/icon_topo.webp" alt="Voltar ao topo" width="50px" height="50px">
+            </a>
+        </div>
+        <br>
+    </footer>
+
+    <script>
+        function calcularCusto() {
+            const selectDestino = document.getElementById('destino-simulacao');
+            const precoPorPessoa = parseFloat(selectDestino.value);
+            const numViajantesInput = document.getElementById('num_viajantes');
+            const numViajantes = parseInt(numViajantesInput.value);
+            const custoTotalDisplay = document.getElementById('custo_total');
+
+            if (isNaN(precoPorPessoa) || isNaN(numViajantes) || numViajantes < 1) {
+                custoTotalDisplay.textContent = "Por favor, insira valores válidos.";
+                return;
+            }
+
+            const custoTotal = precoPorPessoa * numViajantes;
+            custoTotalDisplay.textContent = "R$ " + custoTotal.toFixed(2).replace('.', ',');
+        }
+    </script>
+</body>
+
+</html>

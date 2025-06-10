@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Pacotes de Viagem - VIVA VIAGENS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a name="topo"></a>
+    <header>
+        <div class="header-container-wrapper">
+            <div class="logo-area">
+                <a href="index.html"><img src="images/Logo_Viva_Viagens.png" alt="Logo VIVA VIAGENS" id="company-logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="pages/pagina01.html" class="active">Pacotes</a></li>
+                    <li><a href="pages/pagina02.html">Destinos</a></li>
+                    <li><a href="pages/pagina03.html">Orçamento</a></li>
+                    <li><a href="pages/pagina04.html">Onde Estamos</a></li>
+                    <li><a href="pages/pagina05.html">Promoções</a></li>
+                    <li><a href="pages/pagina06.html">Simule Sua Viagem</a></li>
+                    <li><a href="pages/pagina07.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <img class="minha-imagem" src="images/Logo_Viva_Viagens_2.png" alt="Logo VIVA VIAGENS">
+
+        <h2 class="subtitulo">Viaje com conforto, segurança e economia!</h2>
+        <p>
+        <p class="fade-in">Promoções imperdíveis, com um preço super acessível!</p>
+        </p>
+        <div class="chat-balao" onclick="abrirChat()">
+            <a id="linkbalao" href="https://wa.me/5531973401822">💬 Precisa de ajuda? Fale com a gente!</a>
+        </div>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <a href="pages/pagina05.html">
+                    <img src="images/EGITO.jpg" style="width:100%">
+                    <div class="text">Egito - Cairo</div>
+                </a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="pages/pagina05.html">
+                    <img src="images/bora_bora.jpg" style="width:100%">
+                    <div class="text">Bora Bora - Polinésia Francesa</div>
+                </a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="pages/pagina05.html">
+                    <img src="images/PARIS.jpg" style="width:100%">
+                    <div class="text">Paris - França</div>
+                </a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="pages/pagina05.html">
+                    <img src="images/peru.jpg" style="width:100%">
+                    <div class="text">Machu Picchu - Peru</div>
+                </a>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            const buttons = document.querySelectorAll('.login-button');
+
+            buttons.forEach(button => {
+                let isLoggedIn = false;
+
+                button.addEventListener('click', function (event) {
+                    if (!isLoggedIn) {
+                        const nome = prompt("Informe o Nome:");
+                        const sobrenome = prompt("Informe o Sobrenome:");
+                        const senha = prompt("Informe a Senha:");
+
+                        if (nome) {
+                            button.innerHTML = `Sair&nbsp;&nbsp;&nbsp;&nbsp;(Olá, ${nome}!)`;
+                            isLoggedIn = true;
+                        }
+                    } else {
+                        button.textContent = 'Login';
+                        isLoggedIn = false;
+                    }
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                window.abrirChat = function () {
+                    window.location.href = "";
+                };
+            });
+        </script>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Viagens Online. Todos os direitos reservados.</p>
+        <div class="voltar">
+            <a href="#topo" id="topo-link">
+                <img src="images/icon_topo.webp" alt="Voltar ao topo" width="50px" height="50px">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

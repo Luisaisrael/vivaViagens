@@ -1,0 +1,48 @@
+O site Viva Viagens tem como objetivo principal atuar como uma plataforma digital voltada à oferta e gestão de serviços turísticos. Por meio de uma interface intuitiva e responsiva,
+o sistema permite ao usuário pesquisar, comparar e adquirir pacotes de viagens nacionais e internacionais, incluindo passagens aéreas, hospedagens, passeios e seguros. A proposta do
+site é centralizar informações relevantes para o viajante, otimizar o processo de planejamento e compra de viagens, e facilitar o acesso a promoções personalizadas. Além disso, 
+o Viva Viagens busca firmar parcerias com operadoras de turismo, companhias aéreas e redes hoteleiras, integrando diferentes serviços em um único ambiente online com foco em 
+usabilidade, confiabilidade e eficiência
+
+pagina01.html – Tabela de Pacotes de Viagem
+Título: Tabela de Pacotes de Viagem
+Texto:
+Confira abaixo os nossos principais pacotes de viagem. Trabalhamos com preços acessíveis e experiências completas para que você aproveite cada momento do seu destino favorito. Todos os pacotes incluem hospedagem, passeios e suporte durante toda a viagem.
+
+ pagina02.html – Nossos Destinos
+Título: Nossos Destinos
+Texto:
+Escolha o seu próximo destino! Nossa agência oferece opções incríveis para todos os gostos: praias paradisíacas, cidades históricas, turismo de aventura e muito mais. Clique nas imagens para saber mais sobre cada pacote e planejar sua próxima viagem com facilidade e segurança.
+
+ pagina03.html – Solicite um Orçamento
+Título: Solicite um Orçamento
+Texto:
+Quer viajar, mas não sabe por onde começar? Preencha o formulário com seus dados e o destino desejado. Nossa equipe entrará em contato com uma proposta personalizada, adaptada ao seu perfil e orçamento. Planejar sua viagem nunca foi tão simples!
+
+ pagina04.html – Onde Estamos
+Título: Onde Estamos
+Texto:
+Nossa agência está localizada em uma região de fácil acesso, pronta para receber você! Veja abaixo o mapa com nossa localização exata. Caso prefira, também atendemos online com toda a comodidade. Conte com a gente para realizar sua próxima viagem dos sonhos!
+
+ pagina05.html – Promoção Especial (Landing Page)
+Título: Aproveite Nossas Promoções Especiais!
+Texto:
+Está esperando o momento certo para viajar? A hora é agora! Garanta 20% de desconto nos pacotes para o Nordeste ou ganhe uma diária grátis em viagens para o Sul do Brasil. Promoção válida por tempo limitado. Não perca essa oportunidade única!
+
+ pagina06.html – Simule Sua Viagem (Cálculo em JS)
+Título: Simule o Custo da Sua Viagem
+Texto:
+Planeje sua viagem com mais precisão! Use nossa calculadora para estimar o valor total da sua viagem de acordo com o número de pessoas. Basta inserir a quantidade de viajantes para obter o custo aproximado do pacote. Transparência e praticidade para você decidir com tranquilidade.
+
+ pagina07.html – Sobre a Agência
+Título: Sobre a Viagens Online
+Texto:
+A Viagens Online é uma agência de turismo digital criada com o propósito de facilitar o acesso a experiências incríveis pelo Brasil e pelo mundo. Trabalhamos com atendimento 100% online, pacotes personalizados e suporte total ao cliente antes, durante e depois da viagem.
+Nosso compromisso é com sua satisfação, segurança e comodidade. Amamos viajar, e queremos que você também ame!
+Equipe do Projeto:
+Luísa – Desenvolvedora
+Daniel- Desenvolvedor
+João - Coordenadora do Site
+evellyn– Designer Gráfico
+Pedro– Analista de Conteúdo
+
